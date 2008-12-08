@@ -1,0 +1,15 @@
+#!/bin/bash
+
+# $Id: run 20468 2006-04-11 14:21:41Z marc $
+
+export NO_INTERACTION=1
+
+if test -x /usr/local/php5mm/bin/php
+then
+        export TEST_PHP_EXECUTABLE=/usr/local/php5mm/bin/php
+else
+        export TEST_PHP_EXECUTABLE=`which php`
+fi
+
+$TEST_PHP_EXECUTABLE run-tests.php tests
+
